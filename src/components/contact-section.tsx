@@ -1,43 +1,63 @@
 'use client';
 
-import { Button } from '@/components/ui/button';
 import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
-export function ContactSection() {
+const contactMethods = [
+  {
+    icon: <Mail />,
+    title: "Email",
+    value: "gouravbirwaz@gmail.com",
+    href: "mailto:gouravbirwaz@gmail.com"
+  },
+  {
+    icon: <Phone />,
+    title: "Phone",
+    value: "+91 9141017165",
+    href: "tel:+919141017165"
+  },
+  {
+    icon: <Github />,
+    title: "GitHub",
+    value: "github.com/Gouravbirwaz",
+    href: "https://github.com/Gouravbirwaz"
+  },
+  {
+    icon: <Linkedin />,
+    title: "LinkedIn",
+    value: "linkedin.com/in/gourav-b62157295",
+    href: "https://linkedin.com/in/gourav-b62157295"
+  }
+];
 
+export function ContactSection() {
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-secondary/50">
-      <div className="container mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="font-headline text-4xl font-bold tracking-tight text-primary">Get In Touch</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Have a project in mind, a question, or just want to say hello? I&apos;d love to hear from you.
+    <section id="contact" className="py-24 sm:py-32">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="font-headline text-4xl font-bold tracking-tighter text-gradient">
+            <span className="text-accent-secondary before:content-['class_'] before:text-accent">Contact</span>
+            <span className="text-accent-tertiary after:content-['_{_..._}']"></span>
+          </h2>
+          <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto before:content-['//_'] before:text-accent">
+            Have a project in mind, a question, or just want to connect? Let's talk.
           </p>
         </div>
-        <div className="mx-auto max-w-md text-center">
-            <Card>
-                <CardContent className="p-8 space-y-6">
-                    <div className="flex flex-col gap-4">
-                        <Button asChild size="lg" variant="outline">
-                            <a href="mailto:gouravbirwaz@gmail.com">
-                                <Mail className="mr-2 h-5 w-5" />
-                                gouravbirwaz@gmail.com
-                            </a>
-                        </Button>
-                        <Button asChild size="lg" variant="outline">
-                            <a href="tel:+919141017165">
-                                <Phone className="mr-2 h-5 w-5" />
-                                +91 9141017165
-                            </a>
-                        </Button>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {contactMethods.map((method) => (
+            <a href={method.href} key={method.title} target="_blank" rel="noopener noreferrer" className="group">
+              <Card className="bg-bg-secondary backdrop-blur-md border-border-color shadow-shadow-color h-full text-center p-6 transition-all duration-300 hover:border-accent hover:-translate-y-2 hover:shadow-xl hover:shadow-shadow-color">
+                <CardContent className="p-0 flex flex-col items-center justify-center">
+                    <div className="text-accent mb-4 transition-transform duration-300 group-hover:scale-125">
+                      {method.icon}
                     </div>
+                    <h3 className="font-headline text-xl text-accent mb-1">{method.title}</h3>
+                    <p className="text-text-secondary break-all">{method.value}</p>
                 </CardContent>
-            </Card>
-            <div className="mt-12 flex justify-center gap-6">
-                <a href="https://github.com/Gouravbirwaz" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Github className="h-8 w-8" /></a>
-                <a href="https://linkedin.com/in/gourav-b62157295" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin className="h-8 w-8" /></a>
-            </div>
+              </Card>
+            </a>
+          ))}
         </div>
       </div>
     </section>

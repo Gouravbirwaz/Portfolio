@@ -66,20 +66,20 @@ export default function Home() {
 
 
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="flex min-h-screen flex-col bg-transparent">
       <Header />
       <main className="flex-1">
         <HeroSection bio={adaptedData?.adaptedBio} talkingPoints={adaptedData?.talkingPoints} />
         
-        <section className="container mx-auto -mt-24 sm:-mt-32 md:-mt-40 z-10 relative">
-          <Card className="bg-card/80 backdrop-blur-sm border-accent/20 shadow-lg">
+        <section id="ai-adapter" className="container mx-auto -mt-24 sm:-mt-32 md:-mt-40 z-20 relative">
+          <Card className="bg-bg-secondary backdrop-blur-md border-border-color shadow-lg shadow-shadow-color">
             <CardHeader>
-              <CardTitle className="font-headline text-2xl flex items-center gap-2">
-                <Wand2 className="text-accent" />
-                <span>Tailor This Portfolio to Your Needs</span>
+              <CardTitle className="font-headline text-xl flex items-center gap-2 text-accent">
+                <Wand2 />
+                <span className="before:content-['const_'] before:text-accent-secondary">AdapterEngine</span>
               </CardTitle>
-              <CardDescription className="pt-2 text-base">
-                What are you looking for in a candidate? Enter your key interests (e.g., &quot;backend API development&quot;, &quot;AI for healthcare&quot;, &quot;mobile apps with Flutter&quot;), and I'll dynamically highlight my most relevant skills and projects for you.
+              <CardDescription className="pt-2 text-base text-text-secondary before:content-['//_'] before:text-accent-tertiary">
+                What are you looking for? Enter your interests (e.g., &quot;backend API development&quot;, &quot;AI for healthcare&quot;), and I'll dynamically reconfigure this portfolio to highlight my most relevant skills and projects for you.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -93,10 +93,10 @@ export default function Home() {
                         <FormLabel className="sr-only">Your Interests</FormLabel>
                         <div className="flex flex-col sm:flex-row gap-2">
                           <FormControl>
-                            <Input placeholder="e.g., AI/ML, backend development..." {...field} />
+                            <Input placeholder="> Enter interests..." {...field} className="bg-background/80 border-accent/50 focus:ring-accent text-base" />
                           </FormControl>
-                          <Button type="submit" disabled={isLoading} className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                            {isLoading ? 'Adapting...' : 'Adapt Portfolio'}
+                          <Button type="submit" disabled={isLoading} variant="ghost" className="border-2 border-accent text-accent hover:bg-accent hover:text-black">
+                            {isLoading ? 'Adapting...' : 'Execute()'}
                           </Button>
                         </div>
                         <FormMessage />
@@ -112,21 +112,21 @@ export default function Home() {
         {isLoading && (
             <div className="text-center py-24">
                  <div className="flex items-center justify-center space-x-2">
-                    <div className="w-4 h-4 rounded-full bg-accent animate-pulse"></div>
-                    <div style={{ animationDelay: '200ms' }} className="w-4 h-4 rounded-full bg-accent animate-pulse"></div>
-                    <div style={{ animationDelay: '400ms' }} className="w-4 h-4 rounded-full bg-accent animate-pulse"></div>
+                    <p className="font-code text-accent text-lg">Initializing quantum state... 010101...</p>
                 </div>
-                <p className="mt-4 text-lg text-muted-foreground">Personalizing content for you...</p>
+                <p className="mt-4 text-lg text-text-secondary">Personalizing content matrix for you...</p>
             </div>
         )}
 
-        {!isLoading && (
-          <>
-            <ProjectsSection projects={projects} />
-            <ResumeSection skills={skills} certifications={certifications} />
-            <ContactSection />
-          </>
-        )}
+        <div className="relative z-10">
+          {!isLoading && (
+            <>
+              <ProjectsSection projects={projects} />
+              <ResumeSection skills={skills} certifications={certifications} />
+              <ContactSection />
+            </>
+          )}
+        </div>
       </main>
       <Footer />
     </div>

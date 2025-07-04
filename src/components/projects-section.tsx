@@ -13,52 +13,59 @@ type ProjectsSectionProps = {
 
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
-    <section id="projects" className="py-24 sm:py-32 bg-secondary/50">
-      <div className="container mx-auto">
+    <section id="projects" className="py-24 sm:py-32">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="font-headline text-4xl font-bold tracking-tight text-primary">My Projects</h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <h2 className="font-headline text-4xl font-bold tracking-tighter text-gradient">
+            <span className="text-accent-secondary before:content-['class_'] before:text-accent">Projects</span>
+            <span className="text-accent-tertiary after:content-['_{_..._}']"></span>
+          </h2>
+          <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto before:content-['//_'] before:text-accent">
             A selection of my work demonstrating my skills in web, mobile, and AI.
           </p>
         </div>
         {projects.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project) => (
-              <Card key={project.title} className="flex flex-col overflow-hidden group hover:shadow-xl transition-shadow duration-300">
+              <Card key={project.title} className="flex flex-col overflow-hidden group bg-bg-secondary backdrop-blur-md border-border-color shadow-shadow-color transition-all duration-300 hover:border-accent hover:-translate-y-2 hover:shadow-xl hover:shadow-shadow-color">
                 <CardHeader className="p-0">
                   <div className="relative w-full h-60 overflow-hidden">
                       <Image src={project.image} alt={project.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" data-ai-hint={project.hint} />
                   </div>
                 </CardHeader>
                 <CardContent className="flex-1 p-6">
-                  <CardTitle className="font-headline text-xl mb-2">{project.title}</CardTitle>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <CardTitle className="font-headline text-xl mb-2 text-accent before:content-['const_'] before:text-accent-secondary after:content-['=_...'] after:text-accent-secondary">
+                    {project.title}
+                  </CardTitle>
+                  <CardDescription className="font-code text-text-secondary before:content-['/*_'] after:content-['_*/'] before:text-accent after:text-accent">
+                    {project.description}
+                  </CardDescription>
+                </CardContent>
+                <CardFooter className="flex justify-between items-center p-6 pt-0">
+                  <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary">{tag}</Badge>
+                      <Badge key={tag} variant="secondary" className="bg-accent/10 text-accent border border-accent/20 font-code text-sm before:content-['\"'] after:content-['\"']">{tag}</Badge>
                     ))}
                   </div>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardContent>
-                <CardFooter className="flex justify-end gap-2 p-6 pt-0">
-                  <Button asChild variant="ghost" size="sm">
-                    <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
-                      <Github />
-                      GitHub
-                    </a>
-                  </Button>
-                  <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground" size="sm">
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      Live Demo
-                      <ArrowUpRight />
-                    </a>
-                  </Button>
+                  <div className="flex gap-2">
+                    <Button asChild variant="ghost" size="sm" className="hover:bg-accent hover:text-black">
+                      <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+                        <Github />
+                      </a>
+                    </Button>
+                    <Button asChild variant="ghost" size="sm" className="hover:bg-accent hover:text-black">
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <ArrowUpRight />
+                      </a>
+                    </Button>
+                  </div>
                 </CardFooter>
               </Card>
             ))}
           </div>
         ) : (
-          <div className="text-center text-muted-foreground py-8">
-            <p>No projects match your specified interests. Please broaden your search to see all projects.</p>
+          <div className="text-center text-text-secondary py-8 font-code">
+            <p>// No projects match your specified interests. Please broaden your search to see all projects.</p>
           </div>
         )}
       </div>

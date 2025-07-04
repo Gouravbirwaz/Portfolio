@@ -27,12 +27,12 @@ export const portfolioData = {
     'Backend Development': ['Node.js', 'Django', 'Django REST Framework', 'Firebase'],
     'Mobile Development': ['Flutter', 'Dart'],
     'AI/ML': ['TensorFlow', 'scikit-learn', 'Pandas', 'NumPy', 'OpenCV'],
-    'Tools & Platforms': ['Git', 'GitHub', 'Docker', 'Postman', 'Linux'],
+    'Tools & Platforms': ['Git', 'GitHub', 'Postman', 'VS Code', 'Linux'],
     'Core Competencies': ['Data Structures & Algorithms', 'Problem Solving', 'Teamwork', 'Technical Communication']
   },
   projects: [
     {
-      title: 'EcoConnect – AI-Powered Environmental Monitoring Platform (2024)',
+      title: 'EcoConnect – AI-Powered Environmental Monitoring',
       description: 'Developed a full-stack web application to facilitate real-time environmental reporting and citizen engagement. Integrated AI models to detect environmental anomalies and provide personalized suggestions.',
       image: 'https://placehold.co/600x400.png',
       hint: 'environmental technology',
