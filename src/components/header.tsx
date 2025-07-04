@@ -8,9 +8,9 @@ export function Header() {
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2 group">
             <span className="font-bold font-headline text-lg tracking-wider text-gradient">
-              <span className="text-accent group-hover:text-accent-secondary transition-colors duration-300 before:content-['<_']"></span>
-              GOURAV.AI
-              <span className="text-accent group-hover:text-accent-secondary transition-colors duration-300 after:content-['/>']"></span>
+              <span className="text-accent group-hover:text-accent-secondary transition-colors duration-300 before:content-['P(']"></span>
+              GOURAV 
+              <span className="text-accent group-hover:text-accent-secondary transition-colors duration-300 after:content-[')=1']"></span>
             </span>
           </Link>
         </div>

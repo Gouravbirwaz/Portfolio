@@ -110,7 +110,7 @@ export default function Home() {
         {isLoading && (
             <div className="text-center py-24">
                  <div className="flex items-center justify-center space-x-2">
-                    <p className="font-code text-accent text-lg">Initializing quantum state... 010101...</p>
+                    <p className="font-code text-accent text-lg">Training ........</p>
                 </div>
                 <p className="mt-4 text-lg text-text-secondary">Personalizing content matrix for you...</p>
             </div>
