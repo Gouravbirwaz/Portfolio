@@ -1,17 +1,21 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export function CursorTrail() {
   const [trails, setTrails] = useState<{ x: number; y: number; id: number }[]>([]);
+  const idCounter = useRef(0);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setTrails((prev) => {
-        const newTrail = { x: e.clientX, y: e.clientY, id: Date.now() };
-        const updatedTrails = [...prev, newTrail];
+      // Create a new trail element with a guaranteed unique ID
+      const newTrail = { x: e.clientX, y: e.clientY, id: idCounter.current++ };
+
+      setTrails((prevTrails) => {
+        const updatedTrails = [...prevTrails, newTrail];
+        // Keep the array size manageable to avoid performance issues
         if (updatedTrails.length > 20) {
-          updatedTrails.shift();
+          return updatedTrails.slice(1);
         }
         return updatedTrails;
       });
@@ -22,19 +26,6 @@ export function CursorTrail() {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTrails((prev) => {
-        if (prev.length > 0) {
-          return prev.slice(1);
-        }
-        return prev;
-      });
-    }, 100);
-
-    return () => clearInterval(interval);
   }, []);
 
   return (
