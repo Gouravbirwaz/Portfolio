@@ -58,11 +58,9 @@ export default function Home() {
 
   const projects = adaptedData?.relevantProjects?.length ? adaptedData.relevantProjects : portfolioData.projects;
   const certifications = adaptedData?.relevantCertifications?.length ? adaptedData.relevantCertifications : portfolioData.certifications;
-  
-  let skills:any = portfolioData.skills;
-  if (adaptedData?.highlightedSkills && adaptedData.highlightedSkills.length > 0) {
-    skills = { 'Highlighted Skills': adaptedData.highlightedSkills, ...portfolioData.skills };
-  }
+  const skills = adaptedData?.highlightedSkills?.length 
+    ? { 'Highlighted Skills': adaptedData.highlightedSkills, ...portfolioData.skills } 
+    : portfolioData.skills;
 
 
   return (
