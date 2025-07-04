@@ -36,11 +36,11 @@ export function ContactSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-headline text-4xl font-bold tracking-tighter text-gradient">
-            <span className="text-accent-secondary before:content-['module_'] before:text-accent">Contact</span>
+            <span className="text-accent-secondary before:content-['module_'] before:text-accent">Connect</span>
             <span className="text-accent-tertiary after:content-['_{_..._}']"></span>
           </h2>
           <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto before:content-['//_'] before:text-accent">
-            Have a project in mind, a question, or just want to connect? Let's talk.
+            Ready to build the future? Initiate a connection protocol. Let's talk.
           </p>
         </div>
         

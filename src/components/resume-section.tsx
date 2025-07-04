@@ -20,17 +20,17 @@ export function ResumeSection({ skills, certifications }: ResumeSectionProps) {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-headline text-4xl font-bold tracking-tighter text-gradient">
-            <span className="text-accent-secondary before:content-['model_'] before:text-accent">Resume</span>
+            <span className="text-accent-secondary before:content-['fit_'] before:text-accent">Training_&_Validation</span>
             <span className="text-accent-tertiary after:content-['_{_..._}']"></span>
           </h2>
           <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto before:content-['//_'] before:text-accent">
-            A summary of my professional journey and technical skills.
+            An overview of my training data, validation metrics, and core competencies.
           </p>
         </div>
 
         {/* Education Timeline */}
         <div className="mb-24">
-            <h3 className="text-center font-headline text-3xl text-gradient mb-12">Education</h3>
+            <h3 className="text-center font-headline text-3xl text-gradient mb-12">Core_Training</h3>
             <div className="education-timeline flex flex-col items-center">
               {education.map(edu => (
                 <div key={edu.degree} className="education-item">
@@ -49,7 +49,7 @@ export function ResumeSection({ skills, certifications }: ResumeSectionProps) {
             <Card className="bg-bg-secondary backdrop-blur-md border-border-color">
               <CardHeader>
                 <CardTitle className="font-headline text-accent before:content-['compile_'] before:text-accent-secondary after:content-['=_...'] after:text-accent-secondary">
-                  Technical Arsenal
+                  Skill_Matrix
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -62,7 +62,7 @@ export function ResumeSection({ skills, certifications }: ResumeSectionProps) {
                         {category}
                       </h3>
                       <div className="flex flex-wrap gap-2">
-                        {skillList.map(skill => <Badge key={skill} variant={category === 'Highlighted Skills' ? 'default' : 'secondary'} className={`font-code text-base py-1 px-3 ${category === 'Highlighted Skills' ? 'bg-accent/80 text-black' : 'bg-accent/10 text-accent border border-accent/20'}`}>{skill}</Badge>)}
+                        {skillList.map(skill => <Badge key={skill} variant={category === 'Highlighted Skills' ? 'default' : 'secondary'} className={`font-code text-base py-1 px-3 ${category === 'Highlighted Skills' ? 'bg-accent/80 text-primary-foreground' : 'bg-accent/10 text-accent border border-accent/20'}`}>{skill}</Badge>)}
                       </div>
                     </div>
                   );
@@ -75,7 +75,7 @@ export function ResumeSection({ skills, certifications }: ResumeSectionProps) {
             <Card className="bg-bg-secondary backdrop-blur-md border-border-color">
               <CardHeader>
                 <CardTitle className="font-headline text-accent before:content-['validate_'] before:text-accent-secondary after:content-['=_...'] after:text-accent-secondary">
-                  Certifications
+                  Validation_&_Certs
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -90,11 +90,11 @@ export function ResumeSection({ skills, certifications }: ResumeSectionProps) {
             </Card>
 
             <Card className="text-center p-6 bg-bg-secondary backdrop-blur-md border-border-color">
-              <h3 className="font-headline text-xl mb-4 text-accent">Download My Resume</h3>
-              <Button asChild size="lg" variant="ghost" className="border-2 border-accent text-accent hover:bg-accent hover:text-black">
+              <h3 className="font-headline text-xl mb-4 text-accent">Export Training Data</h3>
+              <Button asChild size="lg" variant="ghost" className="border-2 border-accent text-accent hover:bg-accent hover:text-primary-foreground">
                 <a href="/Gourav-Birwaz-Resume.pdf" download="Gourav-Birwaz-Resume.pdf">
                   <Download className="mr-2 h-5 w-5" />
-                  DownloadPDF()
+                  Export_Training_Data()
                 </a>
               </Button>
             </Card>

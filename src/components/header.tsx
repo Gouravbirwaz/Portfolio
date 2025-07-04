@@ -19,29 +19,29 @@ export function Header() {
             href="#ai-adapter"
             className="transition-colors hover:text-accent text-text-secondary before:content-['{_'] before:opacity-0 hover:before:opacity-100 after:content-['_}'] after:opacity-0 hover:after:opacity-100"
           >
-            AI Adapter
+            AI_Adapter
           </Link>
           <Link
             href="#projects"
             className="transition-colors hover:text-accent text-text-secondary before:content-['{_'] before:opacity-0 hover:before:opacity-100 after:content-['_}'] after:opacity-0 hover:after:opacity-100"
           >
-            Projects
+            Trained_Models
           </Link>
           <Link
             href="#resume"
             className="transition-colors hover:text-accent text-text-secondary before:content-['{_'] before:opacity-0 hover:before:opacity-100 after:content-['_}'] after:opacity-0 hover:after:opacity-100"
           >
-            Resume
+            Training_Data
           </Link>
           <Link
             href="#contact"
             className="transition-colors hover:text-accent text-text-secondary before:content-['{_'] before:opacity-0 hover:before:opacity-100 after:content-['_}'] after:opacity-0 hover:after:opacity-100"
           >
-            Contact
+            Connect
           </Link>
         </nav>
         <div className="flex flex-1 items-center justify-end gap-2">
-          <Button asChild variant="ghost" className="hidden sm:flex border-2 border-accent text-accent hover:bg-accent hover:text-black">
+          <Button asChild variant="ghost" className="hidden sm:flex border-2 border-accent text-accent hover:bg-accent hover:text-primary-foreground">
             <a href="#contact">GetInTouch()</a>
           </Button>
         </div>

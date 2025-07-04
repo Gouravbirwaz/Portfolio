@@ -17,10 +17,11 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-headline text-4xl font-bold tracking-tighter text-gradient">
-            <span className="text-accent-secondary">Projects</span>
+            <span className="text-accent-secondary before:content-['train_'] before:text-accent">Trained_Models</span>
+            <span className="text-accent-tertiary after:content-['_{_..._}']"></span>
           </h2>
-          <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto">
-            A selection of my work demonstrating my skills in web, mobile, and AI.
+          <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto before:content-['//_'] before:text-accent">
+            A showcase of deployed models and solutions demonstrating practical application of skills.
           </p>
         </div>
         {projects.length > 0 ? (
@@ -47,12 +48,12 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                     ))}
                   </div>
                   <div className="flex gap-2">
-                    <Button asChild variant="ghost" size="sm" className="hover:bg-accent hover:text-black">
+                    <Button asChild variant="ghost" size="sm" className="hover:bg-accent hover:text-primary-foreground">
                       <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
                         <Github />
                       </a>
                     </Button>
-                    <Button asChild variant="ghost" size="sm" className="hover:bg-accent hover:text-black">
+                    <Button asChild variant="ghost" size="sm" className="hover:bg-accent hover:text-primary-foreground">
                       <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                         <ArrowUpRight />
                       </a>
@@ -64,7 +65,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
           </div>
         ) : (
           <div className="text-center text-text-secondary py-8 font-code">
-            <p>// No projects match your specified interests. Please broaden your search to see all projects.</p>
+            <p>// No models match your specified interests. Please broaden your search to see all trained models.</p>
           </div>
         )}
       </div>
