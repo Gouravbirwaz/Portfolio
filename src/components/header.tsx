@@ -19,30 +19,30 @@ export function Header() {
             href="#ai-adapter"
             className="transition-colors hover:text-accent text-text-secondary before:content-['{_'] before:opacity-0 hover:before:opacity-100 after:content-['_}'] after:opacity-0 hover:after:opacity-100"
           >
-            AI_Adapter
+            AI Adapter
           </Link>
           <Link
             href="#deployed-models"
             className="transition-colors hover:text-accent text-text-secondary before:content-['{_'] before:opacity-0 hover:before:opacity-100 after:content-['_}'] after:opacity-0 hover:after:opacity-100"
           >
-            Deployed_Models
+            Projects
           </Link>
           <Link
             href="#training-pipeline"
             className="transition-colors hover:text-accent text-text-secondary before:content-['{_'] before:opacity-0 hover:before:opacity-100 after:content-['_}'] after:opacity-0 hover:after:opacity-100"
           >
-            Training_Pipeline
+            Resume
           </Link>
           <Link
             href="#deploy-connection"
             className="transition-colors hover:text-accent text-text-secondary before:content-['{_'] before:opacity-0 hover:before:opacity-100 after:content-['_}'] after:opacity-0 hover:after:opacity-100"
           >
-            Deploy_Connection
+            Contact
           </Link>
         </nav>
         <div className="flex flex-1 items-center justify-end gap-2">
           <Button asChild variant="ghost" className="hidden sm:flex border-2 border-accent text-accent hover:bg-accent hover:text-primary-foreground">
-            <a href="#deploy-connection">DeployConnection()</a>
+            <a href="#deploy-connection">ContactMe()</a>
           </Button>
         </div>
       </div>
