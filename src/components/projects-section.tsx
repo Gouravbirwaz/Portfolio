@@ -17,10 +17,9 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-headline text-4xl font-bold tracking-tighter text-gradient">
-            <span className="text-accent-secondary before:content-['class_'] before:text-accent">Projects</span>
-            <span className="text-accent-tertiary after:content-['_{_..._}']"></span>
+            <span className="text-accent-secondary">Projects</span>
           </h2>
-          <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto before:content-['//_'] before:text-accent">
+          <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto">
             A selection of my work demonstrating my skills in web, mobile, and AI.
           </p>
         </div>
@@ -34,17 +33,17 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                   </div>
                 </CardHeader>
                 <CardContent className="flex-1 p-6">
-                  <CardTitle className="font-headline text-xl mb-2 text-accent before:content-['const_'] before:text-accent-secondary after:content-['=_...'] after:text-accent-secondary">
+                  <CardTitle className="font-headline text-xl mb-2 text-accent">
                     {project.title}
                   </CardTitle>
-                  <CardDescription className="font-code text-text-secondary before:content-['/*_'] after:content-['_*/'] before:text-accent after:text-accent">
+                  <CardDescription className="font-code text-text-secondary">
                     {project.description}
                   </CardDescription>
                 </CardContent>
                 <CardFooter className="flex justify-between items-center p-6 pt-0">
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary" className="bg-accent/10 text-accent border border-accent/20 font-code text-sm before:content-['\"'] after:content-['\"']">{tag}</Badge>
+                      <Badge key={tag} variant="secondary" className="bg-accent/10 text-accent border border-accent/20 font-code text-sm">{tag}</Badge>
                     ))}
                   </div>
                   <div className="flex gap-2">
