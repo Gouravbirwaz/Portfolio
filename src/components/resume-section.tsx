@@ -1,20 +1,20 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Download, GraduationCap, Award } from "lucide-react";
+import { Download, GraduationCap, Award, Sparkles } from "lucide-react";
+import { portfolioData } from "@/lib/portfolio-data";
 
-const skills = [
-  'Python', 'Dart', 'C++', 'C', 'Java', 'HTML5', 'CSS3', 'JavaScript', 'Tailwind CSS', 'Django', 'Django REST Framework', 'Firebase', 'Flutter', 'TensorFlow', 'scikit-learn', 'NumPy', 'Pandas', 'OpenCV', 'Git', 'GitHub', 'Postman', 'Linux', 'DSA'
-];
+type Skills = typeof portfolioData.skills;
+type Certifications = typeof portfolioData.certifications;
 
-const certifications = [
-    { name: "Artificial intelligence for everyone", issuer: "DeepLearning.AI", date: "May 2024" },
-    { name: "Deep Learning in ecological studies", issuer: "Indian Institute of Remote Sensing (IIRS)", date: "Nov 2024" },
-    { name: "Problem Solving (basic)", issuer: "HackerRank", date: "Jul 2024" },
-    { name: "Python Programming intermediate", issuer: "IIIT Kota", date: "Mar 2024" },
-]
+type ResumeSectionProps = {
+  skills: Skills & { 'Highlighted Skills'?: string[] };
+  certifications: Certifications;
+};
 
-export function ResumeSection() {
+export function ResumeSection({ skills, certifications }: ResumeSectionProps) {
+  const education = portfolioData.education;
+
   return (
     <section id="resume" className="py-24 sm:py-32">
       <div className="container mx-auto">
@@ -30,16 +30,13 @@ export function ResumeSection() {
                 <CardTitle className="font-headline flex items-center gap-3"><GraduationCap className="text-accent" /> Education</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                 <div>
-                  <h3 className="font-semibold text-lg">Bachelor of Engineering in Computer Science (AI/ML)</h3>
-                  <p className="text-sm text-muted-foreground">Visvesvaraya Technological University, Karnataka | 2023 - 2027</p>
-                  <p className="mt-2 text-base">Current GPA: 9.23 / 10</p>
-                </div>
-                 <div>
-                  <h3 className="font-semibold text-lg">Pre-University Education</h3>
-                  <p className="text-sm text-muted-foreground">Karnataka State Board | 2021</p>
-                  <p className="mt-2 text-base">Grade: 95%</p>
-                </div>
+                {education.map(edu => (
+                  <div key={edu.degree}>
+                    <h3 className="font-semibold text-lg">{edu.degree}</h3>
+                    <p className="text-sm text-muted-foreground">{edu.university} | {edu.years}</p>
+                    <p className="mt-2 text-base">{edu.gpa}</p>
+                  </div>
+                ))}
               </CardContent>
             </Card>
 
@@ -48,23 +45,35 @@ export function ResumeSection() {
                 <CardTitle className="font-headline flex items-center gap-3"><Award className="text-accent" /> Certifications</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                {certifications.map(cert => (
+                {certifications.length > 0 ? certifications.map(cert => (
                     <div key={cert.name}>
                         <h3 className="font-semibold text-lg">{cert.name}</h3>
                         <p className="text-sm text-muted-foreground">{cert.issuer} | {cert.date}</p>
                     </div>
-                ))}
+                )) : <p className="text-muted-foreground">No certifications match your interests.</p>}
               </CardContent>
             </Card>
           </div>
           
           <div className="space-y-8">
-            <Card>
+             <Card>
               <CardHeader>
                 <CardTitle className="font-headline">Technical Skills</CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-wrap gap-2">
-                {skills.map(skill => <Badge key={skill} variant="secondary" className="text-base py-1 px-3">{skill}</Badge>)}
+              <CardContent className="space-y-4">
+                {Object.entries(skills).map(([category, skillList]) => {
+                  if (!skillList || skillList.length === 0) return null;
+                  return (
+                  <div key={category}>
+                    <h3 className={`font-semibold mb-2 flex items-center gap-2 ${category === 'Highlighted Skills' ? 'text-accent' : ''}`}>
+                      {category === 'Highlighted Skills' && <Sparkles className="h-4 w-4" />}
+                      {category}
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                       {skillList.map(skill => <Badge key={skill} variant={category === 'Highlighted Skills' ? 'default' : 'secondary'} className="text-base py-1 px-3">{skill}</Badge>)}
+                    </div>
+                  </div>
+                )})}
               </CardContent>
             </Card>
             <Card className="text-center p-6">
