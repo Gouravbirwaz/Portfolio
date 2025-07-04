@@ -76,7 +76,7 @@ export default function Home() {
             <CardHeader>
               <CardTitle className="font-headline text-xl flex items-center gap-2 text-accent">
                 <Wand2 />
-                <span className="before:content-['const_'] before:text-accent-secondary">AdapterEngine</span>
+                <span className="before:content-['compile_'] before:text-accent-secondary">AdapterEngine</span>
               </CardTitle>
               <CardDescription className="pt-2 text-base text-text-secondary before:content-['//_'] before:text-accent-tertiary">
                 What are you looking for? Enter your interests (e.g., &quot;backend API development&quot;, &quot;AI for healthcare&quot;), and I'll dynamically reconfigure this portfolio to highlight my most relevant skills and projects for you.

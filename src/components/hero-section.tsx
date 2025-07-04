@@ -16,7 +16,7 @@ export function HeroSection({ bio, talkingPoints }: HeroSectionProps) {
     <section id="hero" className="container mx-auto py-32 sm:py-48 min-h-[90vh] flex items-center">
       <div className="mx-auto max-w-5xl">
         <div className="text-center">
-          <p className="font-code text-accent before:content-['function_']">Gourav()</p>
+          <p className="font-code text-accent before:content-['init_']">Gourav()</p>
           <h1 className="font-headline text-5xl font-extrabold tracking-tighter text-gradient sm:text-7xl md:text-8xl">
             {typedName}
             <span className="animate-ping">_</span>

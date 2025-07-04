@@ -20,7 +20,7 @@ export function ResumeSection({ skills, certifications }: ResumeSectionProps) {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-headline text-4xl font-bold tracking-tighter text-gradient">
-            <span className="text-accent-secondary before:content-['class_'] before:text-accent">Resume</span>
+            <span className="text-accent-secondary before:content-['model_'] before:text-accent">Resume</span>
             <span className="text-accent-tertiary after:content-['_{_..._}']"></span>
           </h2>
           <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto before:content-['//_'] before:text-accent">
@@ -48,7 +48,7 @@ export function ResumeSection({ skills, certifications }: ResumeSectionProps) {
           <div className="lg:col-span-2 space-y-8">
             <Card className="bg-bg-secondary backdrop-blur-md border-border-color">
               <CardHeader>
-                <CardTitle className="font-headline text-accent before:content-['const_'] before:text-accent-secondary after:content-['=_...'] after:text-accent-secondary">
+                <CardTitle className="font-headline text-accent before:content-['compile_'] before:text-accent-secondary after:content-['=_...'] after:text-accent-secondary">
                   Technical Arsenal
                 </CardTitle>
               </CardHeader>
@@ -74,7 +74,7 @@ export function ResumeSection({ skills, certifications }: ResumeSectionProps) {
           <div className="space-y-8">
             <Card className="bg-bg-secondary backdrop-blur-md border-border-color">
               <CardHeader>
-                <CardTitle className="font-headline text-accent before:content-['const_'] before:text-accent-secondary after:content-['=_...'] after:text-accent-secondary">
+                <CardTitle className="font-headline text-accent before:content-['validate_'] before:text-accent-secondary after:content-['=_...'] after:text-accent-secondary">
                   Certifications
                 </CardTitle>
               </CardHeader>
