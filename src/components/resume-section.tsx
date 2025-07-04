@@ -4,8 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Download, Briefcase, GraduationCap } from "lucide-react";
 
 const skills = [
-  'Python', 'JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 
-  'TensorFlow', 'PyTorch', 'Scikit-learn', 'SQL', 'NoSQL', 'Docker', 'Kubernetes', 'AWS'
+  'Python', 'C', 'C++', 'Java', 'JavaScript', 'Django', 'Pandas', 'TensorFlow', 'OpenCV', 'Scikit-learn', 'Docker'
 ];
 
 export function ResumeSection() {
@@ -68,7 +67,7 @@ export function ResumeSection() {
             <Card className="text-center p-6">
               <h3 className="font-headline text-xl mb-4">Download My Resume</h3>
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                <a href="/resume.pdf" download="JohnDoe-Resume.pdf">
+                <a href="/resume.pdf" download="Gourav-Resume.pdf">
                   <Download className="mr-2 h-5 w-5" />
                   Download PDF
                 </a>

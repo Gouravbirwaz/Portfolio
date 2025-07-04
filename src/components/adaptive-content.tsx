@@ -27,7 +27,7 @@ const formSchema = z.object({
   }),
 });
 
-const initialBio = `I am a software engineer with a passion for building beautiful and functional user interfaces. With a background in both design and development, I specialize in creating seamless web experiences using modern technologies like React, Next.js, and TypeScript. My work is driven by a desire to solve complex problems with elegant code. I've contributed to various open-source projects and enjoy collaborating with teams to bring ideas to life. In my spare time, I explore creative coding and generative art.`;
+const initialBio = `My name is Gourav, and I am a software engineer with a deep passion for machine learning and backend development. With expertise in Python, C++, Java, and frameworks like Django and TensorFlow, I specialize in building intelligent systems and robust applications. My work is driven by a desire to solve complex problems with efficient and scalable code. I have experience with technologies like Docker, Pandas, and OpenCV, and I enjoy turning data into actionable insights. In my spare time, I contribute to open-source projects and explore new advancements in AI.`;
 
 export function AdaptiveContent() {
   const [adaptedBio, setAdaptedBio] = useState<AdaptContentOutput | null>(null);
