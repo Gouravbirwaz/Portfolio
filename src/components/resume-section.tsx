@@ -1,11 +1,18 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Download, Briefcase, GraduationCap } from "lucide-react";
+import { Download, GraduationCap, Award } from "lucide-react";
 
 const skills = [
-  'Python', 'C', 'C++', 'Java', 'JavaScript', 'Django', 'Pandas', 'TensorFlow', 'OpenCV', 'Scikit-learn', 'Docker'
+  'Python', 'Dart', 'C++', 'C', 'Java', 'HTML5', 'CSS3', 'JavaScript', 'Tailwind CSS', 'Django', 'Django REST Framework', 'Firebase', 'Flutter', 'TensorFlow', 'scikit-learn', 'NumPy', 'Pandas', 'OpenCV', 'Git', 'GitHub', 'Postman', 'Linux', 'DSA'
 ];
+
+const certifications = [
+    { name: "Artificial intelligence for everyone", issuer: "DeepLearning.AI", date: "May 2024" },
+    { name: "Deep Learning in ecological studies", issuer: "Indian Institute of Remote Sensing (IIRS)", date: "Nov 2024" },
+    { name: "Problem Solving (basic)", issuer: "HackerRank", date: "Jul 2024" },
+    { name: "Python Programming intermediate", issuer: "IIIT Kota", date: "Mar 2024" },
+]
 
 export function ResumeSection() {
   return (
@@ -20,37 +27,33 @@ export function ResumeSection() {
           <div className="lg:col-span-2 space-y-8">
             <Card>
               <CardHeader>
-                <CardTitle className="font-headline flex items-center gap-3"><Briefcase className="text-accent" /> Experience</CardTitle>
+                <CardTitle className="font-headline flex items-center gap-3"><GraduationCap className="text-accent" /> Education</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div>
-                  <h3 className="font-semibold text-lg">Senior ML Engineer</h3>
-                  <p className="text-sm text-muted-foreground">Tech Innovators Inc. | 2020 - Present</p>
-                  <p className="mt-2 text-base">Leading the development of predictive models and deploying scalable machine learning solutions. Collaborated on a project that increased user engagement by 25%.</p>
+                 <div>
+                  <h3 className="font-semibold text-lg">Bachelor of Engineering in Computer Science (AI/ML)</h3>
+                  <p className="text-sm text-muted-foreground">Visvesvaraya Technological University, Karnataka | 2023 - 2027</p>
+                  <p className="mt-2 text-base">Current GPA: 9.23 / 10</p>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-lg">Software Developer</h3>
-                  <p className="text-sm text-muted-foreground">Digital Solutions Co. | 2018 - 2020</p>
-                  <p className="mt-2 text-base">Developed and maintained full-stack web applications for enterprise clients. Specialized in front-end development with React and data visualization.</p>
+                 <div>
+                  <h3 className="font-semibold text-lg">Pre-University Education</h3>
+                  <p className="text-sm text-muted-foreground">Karnataka State Board | 2021</p>
+                  <p className="mt-2 text-base">Grade: 95%</p>
                 </div>
               </CardContent>
             </Card>
 
             <Card>
               <CardHeader>
-                <CardTitle className="font-headline flex items-center gap-3"><GraduationCap className="text-accent" /> Education</CardTitle>
+                <CardTitle className="font-headline flex items-center gap-3"><Award className="text-accent" /> Certifications</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-6">
-                 <div>
-                  <h3 className="font-semibold text-lg">M.S. in Computer Science</h3>
-                  <p className="text-sm text-muted-foreground">University of Technology | 2016 - 2018</p>
-                  <p className="mt-2 text-base">Specialization in Artificial Intelligence and Machine Learning. Thesis on Reinforcement Learning for game environments.</p>
-                </div>
-                 <div>
-                  <h3 className="font-semibold text-lg">B.S. in Software Engineering</h3>
-                  <p className="text-sm text-muted-foreground">State University | 2012 - 2016</p>
-                  <p className="mt-2 text-base">Graduated with honors. Active member of the coding club and participated in several hackathons.</p>
-                </div>
+              <CardContent className="space-y-4">
+                {certifications.map(cert => (
+                    <div key={cert.name}>
+                        <h3 className="font-semibold text-lg">{cert.name}</h3>
+                        <p className="text-sm text-muted-foreground">{cert.issuer} | {cert.date}</p>
+                    </div>
+                ))}
               </CardContent>
             </Card>
           </div>
@@ -58,16 +61,16 @@ export function ResumeSection() {
           <div className="space-y-8">
             <Card>
               <CardHeader>
-                <CardTitle className="font-headline">Skills</CardTitle>
+                <CardTitle className="font-headline">Technical Skills</CardTitle>
               </CardHeader>
               <CardContent className="flex flex-wrap gap-2">
-                {skills.map(skill => <Badge key={skill} variant="outline" className="text-base py-1 px-3">{skill}</Badge>)}
+                {skills.map(skill => <Badge key={skill} variant="secondary" className="text-base py-1 px-3">{skill}</Badge>)}
               </CardContent>
             </Card>
             <Card className="text-center p-6">
               <h3 className="font-headline text-xl mb-4">Download My Resume</h3>
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                <a href="/resume.pdf" download="Gourav-Resume.pdf">
+                <a href="/Gourav-Birwaz-Resume.pdf" download="Gourav-Birwaz-Resume.pdf">
                   <Download className="mr-2 h-5 w-5" />
                   Download PDF
                 </a>

@@ -6,38 +6,38 @@ import { ArrowUpRight, Github } from 'lucide-react';
 
 const projects = [
   {
-    title: 'Neural Network Visualizer',
-    description: 'An interactive platform to build, train, and visualize neural networks in real-time. Built with D3.js and TensorFlow.js.',
+    title: 'EcoConnect – AI Environmental Platform',
+    description: 'A full-stack web application to facilitate real-time environmental reporting and citizen engagement, with AI models to detect anomalies.',
     image: 'https://placehold.co/600x400.png',
-    hint: 'neural network',
-    tags: ['React', 'Next.js', 'AI', 'Visualization'],
+    hint: 'environmental technology',
+    tags: ['React', 'Node.js', 'Firebase', 'AI', 'Tailwind CSS'],
     liveUrl: '#',
     repoUrl: '#',
   },
   {
-    title: 'Predictive Analytics Dashboard',
-    description: 'A comprehensive dashboard for e-commerce businesses to forecast sales trends using historical data and ML models.',
+    title: 'Cross-Platform Mobile App',
+    description: 'A mobile application built with Flutter for both Android and iOS. Showcases experience in cross-platform development and modern UI.',
     image: 'https://placehold.co/600x400.png',
-    hint: 'dashboard analytics',
-    tags: ['Python', 'Flask', 'React', 'Charts'],
+    hint: 'mobile app screen',
+    tags: ['Flutter', 'Dart', 'Firebase'],
     liveUrl: '#',
     repoUrl: '#',
   },
   {
-    title: 'Generative Art System',
-    description: 'A creative tool that uses generative adversarial networks (GANs) to produce unique, abstract artwork based on user inputs.',
+    title: 'Django REST API',
+    description: 'A backend project using Django and Django REST Framework to create a robust API for a web service, including authentication and database management.',
     image: 'https://placehold.co/600x400.png',
-    hint: 'abstract art',
-    tags: ['Pytorch', 'Next.js', 'Generative AI'],
+    hint: 'code api backend',
+    tags: ['Python', 'Django', 'REST API', 'Postman'],
     liveUrl: '#',
     repoUrl: '#',
   },
     {
-    title: 'Sentiment Analysis API',
-    description: 'A robust REST API that provides sentiment analysis for text data, capable of handling high-volume requests for social media monitoring.',
+    title: 'Computer Vision Project',
+    description: 'A project utilizing OpenCV and TensorFlow for a computer vision task, such as object detection or image classification, demonstrating practical ML skills.',
     image: 'https://placehold.co/600x400.png',
-    hint: 'code terminal',
-    tags: ['Node.js', 'Express', 'NLP'],
+    hint: 'computer vision',
+    tags: ['Python', 'OpenCV', 'TensorFlow', 'Computer Vision'],
     liveUrl: '#',
     repoUrl: '#',
   },
@@ -49,7 +49,7 @@ export function ProjectsSection() {
       <div className="container mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-headline text-4xl font-bold tracking-tight text-primary">My Projects</h2>
-          <p className="mt-4 text-lg text-muted-foreground">A selection of my work in machine learning and web development.</p>
+          <p className="mt-4 text-lg text-muted-foreground">A selection of my work demonstrating my skills in web, mobile, and AI.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => (

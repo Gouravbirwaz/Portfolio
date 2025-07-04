@@ -10,7 +10,6 @@ import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -27,7 +26,7 @@ const formSchema = z.object({
   }),
 });
 
-const initialBio = `My name is Gourav, and I am a software engineer with a deep passion for machine learning and backend development. With expertise in Python, C++, Java, and frameworks like Django and TensorFlow, I specialize in building intelligent systems and robust applications. My work is driven by a desire to solve complex problems with efficient and scalable code. I have experience with technologies like Docker, Pandas, and OpenCV, and I enjoy turning data into actionable insights. In my spare time, I contribute to open-source projects and explore new advancements in AI.`;
+const initialBio = `I'm Gourav, a motivated and detail-oriented Software Engineer with a strong foundation in Artificial Intelligence and Machine Learning. I'm passionate about solving real-world problems through scalable solutions, leveraging AI/ML techniques, data structures and algorithms, and modern development technologies. Proficient in Python, React, Firebase, and ML frameworks such as TensorFlow and scikit-learn. I am seeking opportunities to contribute my technical and analytical skills to build impactful applications in the environmental, healthcare, and social good sectors.`;
 
 export function AdaptiveContent() {
   const [adaptedBio, setAdaptedBio] = useState<AdaptContentOutput | null>(null);

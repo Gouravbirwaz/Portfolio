@@ -8,7 +8,7 @@ export function Header() {
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold font-headline text-lg tracking-wider">ML//ME</span>
+            <span className="font-bold font-headline text-lg tracking-wider">Gourav Birwaz</span>
           </Link>
         </div>
         <nav className="flex items-center gap-6 text-sm">
@@ -33,7 +33,7 @@ export function Header() {
         </nav>
         <div className="flex flex-1 items-center justify-end gap-2">
           <ThemeToggle />
-          <Button asChild variant="ghost" className="hidden sm:flex">
+          <Button asChild className="hidden sm:flex bg-accent text-accent-foreground hover:bg-accent/90">
             <a href="#contact">Contact Me</a>
           </Button>
         </div>

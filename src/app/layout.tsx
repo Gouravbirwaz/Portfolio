@@ -4,8 +4,8 @@ import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: 'ML//ME',
-  description: 'A portfolio synthesizing creativity with code, inspired by machine learning.',
+  title: 'Gourav Birwaz - Software Engineer',
+  description: 'Motivated and detail-oriented Software Engineer with a strong foundation in Artificial Intelligence and Machine Learning, passionate about solving real-world problems.',
 };
 
 export default function RootLayout({
