@@ -13,15 +13,15 @@ type ProjectsSectionProps = {
 
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
   return (
-    <section id="projects" className="py-24 sm:py-32">
+    <section id="deployed-models" className="py-24 sm:py-32">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-headline text-4xl font-bold tracking-tighter text-gradient">
-            <span className="text-accent-secondary before:content-['train_'] before:text-accent">Trained_Models</span>
+            <span className="text-accent-secondary before:content-['deploy_'] before:text-accent">Deployed_Models</span>
             <span className="text-accent-tertiary after:content-['_{_..._}']"></span>
           </h2>
           <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto before:content-['//_'] before:text-accent">
-            A showcase of deployed models and solutions demonstrating practical application of skills.
+            Each project represents a model, rigorously trained on complex datasets and deployed to demonstrate practical, high-impact solutions.
           </p>
         </div>
         {projects.length > 0 ? (

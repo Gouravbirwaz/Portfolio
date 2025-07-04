@@ -22,27 +22,27 @@ export function Header() {
             AI_Adapter
           </Link>
           <Link
-            href="#projects"
+            href="#deployed-models"
             className="transition-colors hover:text-accent text-text-secondary before:content-['{_'] before:opacity-0 hover:before:opacity-100 after:content-['_}'] after:opacity-0 hover:after:opacity-100"
           >
-            Trained_Models
+            Deployed_Models
           </Link>
           <Link
-            href="#resume"
+            href="#training-pipeline"
             className="transition-colors hover:text-accent text-text-secondary before:content-['{_'] before:opacity-0 hover:before:opacity-100 after:content-['_}'] after:opacity-0 hover:after:opacity-100"
           >
-            Training_Data
+            Training_Pipeline
           </Link>
           <Link
-            href="#contact"
+            href="#deploy-connection"
             className="transition-colors hover:text-accent text-text-secondary before:content-['{_'] before:opacity-0 hover:before:opacity-100 after:content-['_}'] after:opacity-0 hover:after:opacity-100"
           >
-            Connect
+            Deploy_Connection
           </Link>
         </nav>
         <div className="flex flex-1 items-center justify-end gap-2">
           <Button asChild variant="ghost" className="hidden sm:flex border-2 border-accent text-accent hover:bg-accent hover:text-primary-foreground">
-            <a href="#contact">GetInTouch()</a>
+            <a href="#deploy-connection">DeployConnection()</a>
           </Button>
         </div>
       </div>

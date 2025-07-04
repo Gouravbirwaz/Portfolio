@@ -32,11 +32,11 @@ const contactMethods = [
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-24 sm:py-32">
+    <section id="deploy-connection" className="py-24 sm:py-32">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-headline text-4xl font-bold tracking-tighter text-gradient">
-            <span className="text-accent-secondary before:content-['module_'] before:text-accent">Connect</span>
+            <span className="text-accent-secondary before:content-['deploy_'] before:text-accent">Connection_Protocol</span>
             <span className="text-accent-tertiary after:content-['_{_..._}']"></span>
           </h2>
           <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto before:content-['//_'] before:text-accent">
