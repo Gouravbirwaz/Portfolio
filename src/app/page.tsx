@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import {adaptContent as adaptContentServer,type AdaptContentOutput,} from '@/ai/flows/adapt-content';
+// Removed direct adaptContentServer import, we will call API instead
+import type { AdaptContentOutput } from '@/ai/flows/adapt-content';
 import { portfolioData } from '@/lib/portfolio-data';
 
 import { Header } from '@/components/header';
@@ -40,9 +41,7 @@ const formSchema = z.object({
 });
 
 export default function Home() {
-  const [adaptedData, setAdaptedData] = useState<AdaptContentOutput | null>(
-    null
-  );
+  const [adaptedData, setAdaptedData] = useState<AdaptContentOutput | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
@@ -57,10 +56,23 @@ export default function Home() {
     setIsLoading(true);
     setAdaptedData(null);
     try {
-      const result = await adaptContentServer({
-        interests: values.interests,
-        portfolio: portfolioData,
+      // Call your backend API route here
+      const response = await fetch('/api/adapt-contents', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          interests: values.interests,
+          // You don't need to send portfolioData because backend already has it
+        }),
       });
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.statusText}`);
+      }
+
+      const result: AdaptContentOutput = await response.json();
       setAdaptedData(result);
     } catch (error) {
       console.error(error);
@@ -97,10 +109,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col bg-transparent">
       <Header />
       <main className="flex-1">
-        <HeroSection
-          bio={adaptedData?.adaptedBio}
-          talkingPoints={adaptedData?.talkingPoints}
-        />
+        <HeroSection bio={adaptedData?.adaptedBio} talkingPoints={adaptedData?.talkingPoints} />
 
         <section
           id="ai-adapter"
