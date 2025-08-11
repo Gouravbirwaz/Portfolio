@@ -38,7 +38,7 @@ export const portfolioData = {
       hint: 'environmental technology',
       tags: ['React', 'Node.js', 'Firebase', 'AI', 'Tailwind CSS'],
       liveUrl: '#',
-      repoUrl: 'https://github.com/Gouravbirwaz/-EcoCredix-Building-a-Greener-Tomarrow',
+      repoUrl: 'https://github.com/Gouravbirwaz/-EcoCredix-Building-a-Greener-Tomarrow-',
       keywords: ['full-stack', 'web', 'ai', 'environment', 'react', 'nodejs', 'monitoring', 'reporting']
     }
   ],
