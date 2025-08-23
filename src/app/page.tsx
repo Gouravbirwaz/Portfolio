@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { type AdaptContentOutput } from '@/ai/flows/adapt-content';
+
 import { portfolioData } from '@/lib/portfolio-data';
 
 import { Header } from '@/components/header';
@@ -40,6 +40,26 @@ const formSchema = z.object({
 });
 
 export default function Home() {
+  // Define the AdaptContentOutput type according to your API response structure
+  type AdaptContentOutput = {
+    adaptedBio?: string;
+    talkingPoints?: string[];
+    relevantProjects?: Array<{
+      title: string;
+      description: string;
+      liveUrl?: string;
+      repoUrl?: string;
+      // add other project fields as needed
+    }>;
+    relevantCertifications?: Array<{
+      name: string;
+      issuer: string;
+      // add other certification fields as needed
+    }>;
+    highlightedSkills?: string[];
+    // add other fields as needed
+  };
+  
   const [adaptedData, setAdaptedData] = useState<AdaptContentOutput | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
@@ -105,61 +125,6 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection bio={adaptedData?.adaptedBio} talkingPoints={adaptedData?.talkingPoints} />
-
-        <section
-          id="ai-adapter"
-          className="container mx-auto -mt-24 sm:-mt-32 md:-mt-40 z-20 relative"
-        >
-          <Card className="bg-bg-secondary backdrop-blur-md border-border-color shadow-lg shadow-shadow-color">
-            <CardHeader>
-              <CardTitle className="font-headline text-xl flex items-center gap-2 text-accent">
-                <Wand2 />
-                <span className="before:content-['compile_'] before:text-accent-secondary">
-                  AdapterEngine
-                </span>
-              </CardTitle>
-              <CardDescription className="pt-2 text-base text-text-secondary before:content-['//_'] before:text-accent-tertiary">
-                What are you looking for? Enter your interests (e.g., &quot;backend API
-                development&quot;, &quot;AI for healthcare&quot;), and I'll dynamically
-                reconfigure this portfolio to highlight my most relevant skills and
-                projects for you.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                  <FormField
-                    control={form.control}
-                    name="interests"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="sr-only">Your Interests</FormLabel>
-                        <div className="flex flex-col sm:flex-row gap-2">
-                          <FormControl>
-                            <Input
-                              placeholder="> Enter interests..."
-                              {...field}
-                              className="bg-background/80 border-accent/50 focus:ring-accent text-base"
-                            />
-                          </FormControl>
-                          <Button
-                            type="submit"
-                            disabled={isLoading}
-                            variant="ghost"
-                            className="border-2 border-accent text-accent hover:bg-accent hover:text-black"
-                          >
-                            {isLoading ? 'Adapting...' : 'Execute()'}
-                          </Button>
-                        </div>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </form>
-              </Form>
-            </CardContent>
-          </Card>
-        </section>
 
         {isLoading && (
           <div className="text-center py-24">
