@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { adaptContent, type AdaptContentOutput } from '@/ai/flows/adapt-content';
+import { type AdaptContentOutput } from '@/ai/flows/adapt-content';
 import { portfolioData } from '@/lib/portfolio-data';
 
 import { Header } from '@/components/header';
@@ -42,7 +42,19 @@ export default function Home() {
     setIsLoading(true);
     setAdaptedData(null);
     try {
-      const result = await adaptContent({ interests: values.interests, portfolio: portfolioData });
+      const response = await fetch('/api/adapt-content', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ interests: values.interests, portfolio: portfolioData }),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      const result = await response.json();
       setAdaptedData(result);
     } catch (error) {
       console.error(error);
