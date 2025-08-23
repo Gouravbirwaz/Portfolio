@@ -90,11 +90,11 @@ export function ResumeSection({ skills, certifications }: ResumeSectionProps) {
             </Card>
 
             <Card className="text-center p-6 bg-bg-secondary backdrop-blur-md border-border-color">
-              <h3 className="font-headline text-xl mb-4 text-accent">Export Training Dataset</h3>
+              <h3 className="font-headline text-xl mb-4 text-accent">Export resume</h3>
               <Button asChild size="lg" variant="ghost" className="border-2 border-accent text-accent hover:bg-accent hover:text-primary-foreground">
-                <a href="/Gourav-Birwaz-Resume.pdf" download="Gourav-Birwaz-Resume.pdf">
+                <a href="/Resume.pdf" download="Resume.pdf">  
                   <Download className="mr-2 h-5 w-5" />
-                  Export_Dataset()
+                  Export resume
                 </a>
               </Button>
             </Card>
